@@ -84,7 +84,7 @@ top
       content: "";
       width: 155rem;
       aspect-ratio: 1/0.54;
-      background: url(../images/concept_bg.svg) no-repeat center/contain;
+      background: url(images/concept_bg.svg) no-repeat center/contain;
       z-index: -1;
     }
   }
@@ -116,7 +116,7 @@ top
       aspect-ratio: 1/0.15;
       display: flex;
       gap: 9px;
-      background: url(../images/concept_point-bg.png) no-repeat center/contain;
+      background: url(images/concept_point-bg.png) no-repeat center/contain;
       padding-left: 2rem;
       p {
         font-size: 2rem;
@@ -231,7 +231,7 @@ top
 
 #feature {
   padding-top: 6.2rem;
-  background: url(../images/sub-bg.png) repeat center/contain;
+  background: url(images/sub-bg.png) repeat center/contain;
   .ttl-wrap {
     text-align: center;
     margin-bottom: 10rem;
@@ -359,7 +359,7 @@ top
         width: 100%;
         height: 100%;
         border-radius: 2rem;
-        background: url(../images/cta_bg.svg) no-repeat center/cover;
+        background: url(images/cta_bg.svg) no-repeat center/cover;
         opacity: 0.7;
         z-index: -1;
       }
@@ -420,7 +420,7 @@ top
     dl {
       margin-bottom: 1rem;
       dt {
-        background: url(../images/faq_head.svg) no-repeat center/contain;
+        background: url(images/faq_head.svg) no-repeat center/contain;
         padding: 1rem 10rem;
         font-weight: 500;
         span {
@@ -534,7 +534,7 @@ top
       width: 100%;
       height: 100%;
       border-radius: 2rem;
-      background: url(../images/cta_bg.svg) no-repeat center/cover;
+      background: url(images/cta_bg.svg) no-repeat center/cover;
       opacity: 0.7;
       z-index: -1;
     }
@@ -583,5 +583,22 @@ top
         flex-shrink: 0;
       }
     }
+  }
+}
+
+#thanks {
+  padding: 30rem 0 10rem;
+  .ttl-wrap {
+    margin-bottom: 6rem;
+  }
+  p {
+    font-weight: 500;
+    line-height: 2;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .btn-wrap {
+    width: 30rem;
+    margin: 10rem auto 0;
   }
 }

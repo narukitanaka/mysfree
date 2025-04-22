@@ -10,4 +10,9 @@ footer {
   .logo {
     width: 7.9rem;
   }
+  &.p-thanks {
+    padding: 22rem v.pxtovw(55) 4rem v.pxtovw(26);
+    background: url(./images/bg-parts03.svg) no-repeat top/contain;
+    background-color: #fcfaf4;
+  }
 }

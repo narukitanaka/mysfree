@@ -48,7 +48,7 @@
       <div class="kv_ttl">
         <h1>
           地球とカラダにやさしい
-          <span>COCONIUT ICE</span>
+          <span>COCONUT ICE</span>
         </h1>
         <div class="sub-ttl">
           <span>100%植物由来の</span><br>
@@ -516,30 +516,31 @@
           <table>
             <tr>
               <th><label for="company">会社名（法人名）／店舗・施設名</label></th>
-              <td><input type="text" id="company" name="company" placeholder="株式会社〇〇"></td>
+              <td><input type="text" id="company" name="会社名" placeholder="株式会社〇〇"></td>
             </tr>
             <tr>
               <th><label for="name">お名前<span class="required">必須</span></label></th>
-              <td><input type="text" id="name" name="name" placeholder="山田太郎" required></td>
+              <td><input type="text" id="name" name="お名前" placeholder="山田太郎" required></td>
             </tr>
             <tr>
               <th><label for="kana">ふりがな</label></th>
-              <td><input type="text" id="kana" name="kana" placeholder="やまだたろう"></td>
+              <td><input type="text" id="kana" name="ふりがな" placeholder="やまだたろう"></td>
             </tr>
             <tr>
               <th><label for="email">メールアドレス<span class="required">必須</span></label></th>
-              <td><input type="email" id="email" name="email" placeholder="sample@gmail.com" required></td>
+              <td><input type="email" id="email" name="メールアドレス" placeholder="sample@gmail.com" required></td>
             </tr>
             <tr>
               <th><label for="phone">電話番号<span class="required">必須</span></label></th>
-              <td><input type="tel" id="phone" name="phone" placeholder="000-0000-0000" required></td>
+              <td><input type="tel" id="phone" name="電話番号" placeholder="000-0000-0000" required></td>
             </tr>
             <tr>
               <th><label for="message">お問い合わせ内容（資料をご希望の場合、「資料請求」とご記載ください。）<span class="required">必須</span></label></th>
-              <td><textarea id="message" name="message" rows="5" placeholder="資料請求したい。" required></textarea></td>
+              <td><textarea id="message" name="お問い合わせ内容" rows="5" placeholder="資料請求したい。" required></textarea></td>
             </tr>
           </table>
           <div class="btn-wrap">
+            <input type="hidden" name="recaptcha_token" id="recaptcha_token">
             <button type="submit" class="btn c-black">
               <img src="images/icon-mail.svg" alt="">
               送信する
@@ -561,6 +562,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LflXFMqAAAAADkDkadRRhOvSS4SJL6MDWxxf_KC"></script>
+  <script>
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6LflXFMqAAAAADkDkadRRhOvSS4SJL6MDWxxf_KC', { action: 'submit' }).then(function (token) {
+        // トークンをhiddenフィールドにセット
+        document.getElementById('recaptcha_token').value = token;
+      });
+    });
+  </script>
+
 
 </body>
 
