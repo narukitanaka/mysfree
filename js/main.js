@@ -11,7 +11,7 @@ $(".faq-list dt").on("click", function (e) {
 ////////////////////////////////////////////////////////////////////////////////////////
 // GSAP アニメーション
 ///////////////////////////////////////////////////////////////////////////////////////
-// GSAPフェードイン
+// フェードイン
 const textElements = document.querySelectorAll(".fadeIn");
 if (textElements.length > 0) {
   textElements.forEach((element) => {
@@ -28,3 +28,23 @@ if (textElements.length > 0) {
     });
   });
 }
+
+// 順番にフェードイン
+const staggerTriggers = document.querySelectorAll(".staggerTriger");
+staggerTriggers.forEach((trigger) => {
+  const saggerElements = trigger.querySelectorAll(".fadeInStagger");
+  if (saggerElements.length > 0) {
+    gsap.from(saggerElements, {
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      stagger: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 60%",
+        once: true,
+      },
+    });
+  }
+});
