@@ -7,24 +7,44 @@ top
   position: relative;
   width: 100vw;
   height: v.pxtovw(770);
+  @include c.mq() {
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 4rem;
+  }
   .kv_img {
     position: absolute;
     top: v.pxtovw(99);
     right: v.pxtovw(82);
     width: v.pxtovw(893);
+    @include c.mq() {
+      top: v.pxtovw_sp(80);
+      right: v.pxtovw_sp(-42);
+      width: v.pxtovw_sp(388);
+    }
   }
   .kv_ttl {
     display: inline-block;
     position: relative;
     margin: v.pxtovw(298) 0 0 v.pxtovw(119);
+    @include c.mq() {
+      margin: v.pxtovw_sp(320) 0 2rem v.pxtovw_sp(20);
+    }
     h1 {
       font-size: 2.4rem;
       margin-bottom: 2.1rem;
+      @include c.mq() {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
       span {
         display: block;
         font-family: v.$font-syn;
         font-size: 4.8rem;
         font-weight: 700;
+        @include c.mq() {
+          font-size: 3.6rem;
+        }
       }
     }
     .sub-ttl {
@@ -36,6 +56,9 @@ top
         padding: 1px 1px 2px 5px;
         font-family: v.$font-syn;
         font-size: 1.8rem;
+        @include c.mq() {
+          font-size: 1.5rem;
+        }
       }
     }
     .img-box {
@@ -44,6 +67,11 @@ top
       left: v.pxtovw(-112);
       width: v.pxtovw(339);
       z-index: -1;
+      @include c.mq() {
+        top: 2rem;
+        left: -4rem;
+        width: 17.4rem;
+      }
     }
   }
   .omotenashi {
@@ -55,28 +83,54 @@ top
     gap: 2rem;
     padding: 3rem 4rem;
     border-radius: 2rem;
+    @include c.mq() {
+      position: static;
+      width: 95%;
+      gap: 1.5rem;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
     img {
       width: 20rem;
       margin-top: 1rem;
+      @include c.mq() {
+        width: 12rem;
+      }
     }
     p {
       font-size: 1.4rem;
+      @include c.mq() {
+        font-size: 1.2rem;
+      }
       strong {
         font-size: 1.6rem;
         display: block;
         margin-bottom: 0.5rem;
+        @include c.mq() {
+          font-size: 1.4rem;
+          margin-bottom: 0;
+        }
       }
     }
   }
 }
 
 #concept {
-  margin-bottom: 20rem;
+  padding-bottom: 20rem;
+  overflow: hidden;
+  @include c.mq() {
+    padding-bottom: 14rem;
+  }
   .inner {
     position: relative;
     padding-top: 14rem;
     @include c.flex(start, start);
     gap: 4rem;
+    @include c.mq() {
+      padding-top: 10rem;
+      flex-direction: column;
+      gap: 1rem;
+    }
     &::before {
       position: absolute;
       top: 0;
@@ -86,12 +140,26 @@ top
       aspect-ratio: 1/0.54;
       background: url(images/concept_bg.svg) no-repeat center/contain;
       z-index: -1;
+      @include c.mq() {
+        left: -44.5rem;
+        width: 200rem;
+      }
     }
   }
   .left {
     .img-box {
       width: 40.6rem;
+      width: clamp(30rem, v.pxtovw(406), 40.6rem);
       margin-left: -2rem;
+      @include c.mq() {
+        width: 24rem;
+        margin-left: 0;
+      }
+    }
+  }
+  .right {
+    @include c.mq() {
+      width: 100%;
     }
   }
   .ttl-wrap {
@@ -101,8 +169,14 @@ top
   }
   .text {
     padding-top: 4rem;
+    @include c.mq() {
+      padding-top: 0;
+    }
     p {
       margin-bottom: 3rem;
+      @include c.mq() {
+        margin-bottom: 2rem;
+      }
     }
   }
   .point {
@@ -110,6 +184,9 @@ top
     flex-direction: column;
     gap: 5px;
     margin-top: 5rem;
+    @include c.mq() {
+      margin-top: 4rem;
+    }
     div {
       @include c.flex(start, center);
       width: 48rem;
@@ -118,13 +195,28 @@ top
       gap: 9px;
       background: url(images/concept_point-bg.png) no-repeat center/contain;
       padding-left: 2rem;
+      @include c.mq() {
+        width: 100%;
+      }
+      img {
+        @include c.mq() {
+          width: 4rem;
+        }
+      }
       p {
         font-size: 2rem;
         font-weight: 500;
         line-height: 1.3;
         margin-top: -1rem;
+        @include c.mq() {
+          font-size: 1.5rem;
+          margin-top: -0.3rem;
+        }
         span {
           font-size: 1.4rem;
+          @include c.mq() {
+            font-size: 1.3rem;
+          }
         }
       }
     }
@@ -133,16 +225,38 @@ top
 
 #omotenashi {
   margin-bottom: 13rem;
+  @include c.mq() {
+    margin-bottom: 8rem;
+  }
   .ttl-wrap {
     margin-bottom: 3.5rem;
+    @include c.mq() {
+      margin-bottom: 2rem;
+    }
     .sub-ttl {
       margin-bottom: 1.5rem;
+      @include c.mq() {
+        font-size: 1.3rem;
+      }
+    }
+    h2 {
+      @include c.mq() {
+        font-size: 2rem;
+        line-height: 1.7;
+      }
     }
   }
   .inner {
     display: flex;
+    @include c.mq() {
+      flex-direction: column;
+    }
   }
   .left {
+    > .img-box {
+      width: 90%;
+      margin: 0 auto 3rem;
+    }
     .txt {
       max-width: 50rem;
       line-height: 2;
@@ -150,6 +264,9 @@ top
     }
     .omotenashi-banner {
       width: 50rem;
+      @include c.mq() {
+        width: 100%;
+      }
       p {
         @include c.flex(center, center);
         gap: 5px;
@@ -178,7 +295,10 @@ top
   .right {
     padding-top: 6.7rem;
     .img-box {
-      width: 54rem;
+      width: clamp(42rem, v.pxtovw(540), 54rem);
+      @include c.mq() {
+        width: 70%;
+      }
     }
   }
 }
@@ -190,26 +310,48 @@ top
   }
   .scene-area {
     display: flex;
-    gap: 3rem;
+    gap: clamp(1rem, v.pxtovw(30), 3rem);
+    @include c.mq() {
+      flex-direction: column;
+      gap: 4rem;
+    }
     div {
       position: relative;
       .img-box {
-        margin-bottom: 1.3rem;
+        margin-bottom: 1rem;
+        @include c.mq() {
+          aspect-ratio: 1/0.55;
+        }
+        img {
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
       }
       h3 {
         position: absolute;
         bottom: -0.7rem;
         left: -1.4rem;
-        width: 15.6rem;
+        width: clamp(10rem, v.pxtovw(156), 15.6rem);
+        @include c.mq() {
+          width: v.pxtovw_sp(130);
+          bottom: -1rem;
+          left: -2rem;
+        }
         img {
           width: 100%;
         }
       }
       p {
+        width: 65%;
         max-width: 22.8rem;
         margin: 0 0 0 auto;
         font-size: 1.4rem;
         line-height: 2;
+        @include c.mq() {
+          width: 70%;
+          line-height: 1.7;
+        }
       }
     }
   }
@@ -217,12 +359,19 @@ top
 
 #arrange {
   margin-bottom: 7rem;
+  @include c.mq() {
+    margin-bottom: 5rem;
+  }
   .ttl-wrap {
     margin-bottom: 4.5rem;
   }
   p {
     text-align: center;
     margin-bottom: 3rem;
+    @include c.mq() {
+      text-align: left;
+      font-size: 1.4rem;
+    }
   }
   .arrange-area {
     max-width: 90rem;
@@ -231,9 +380,15 @@ top
     justify-content: center;
     gap: 1.8rem;
     margin: 0 auto;
+    @include c.mq() {
+      gap: 1.5rem;
+    }
     .img-box {
       width: 20rem;
       aspect-ratio: 1/1;
+      @include c.mq() {
+        width: calc((100% / 2) - (1.5rem / 2));
+      }
     }
   }
 }
@@ -244,18 +399,34 @@ top
   .ttl-wrap {
     text-align: center;
     margin-bottom: 10rem;
+    @include c.mq() {
+      margin-bottom: 5rem;
+    }
   }
   .block {
     &.sozai {
       margin-bottom: 8rem;
+      @include c.mq() {
+        margin-bottom: 6rem;
+      }
       .ttl {
-        width: 31.3rem;
+        width: clamp(22rem, v.pxtovw(313), 31.3rem);
         flex-shrink: 0;
+        @include c.mq() {
+          width: 15rem;
+          margin: 0 auto;
+        }
       }
       .flex {
         display: flex;
+        @include c.mq() {
+          flex-direction: column;
+        }
         &:has(.right) {
           gap: 8.5rem;
+          @include c.mq() {
+            gap: 2rem;
+          }
         }
         &:has(.sozai-box) {
           justify-content: center;
@@ -265,9 +436,15 @@ top
       .right {
         flex-grow: 1;
         margin-bottom: 6rem;
+        @include c.mq() {
+          margin-bottom: 5rem;
+        }
         h3 {
-          font-size: 3.2rem;
+          font-size: clamp(2.4rem, v.pxtovw(32), 3.2rem);
           margin-bottom: 3rem;
+          @include c.mq(md) {
+            font-size: 2rem;
+          }
         }
         .txt {
           margin-bottom: 1.5rem;
@@ -280,29 +457,55 @@ top
           border-radius: 20px;
           background-color: #fff;
           padding: 2rem;
+          @include c.mq() {
+            padding: 2rem 1.5rem;
+          }
           p {
             @include c.flex(center, center);
             gap: 1.2rem;
             font-weight: 500;
+            @include c.mq() {
+              gap: 0.7rem;
+              font-size: 1.3rem;
+            }
             span {
               font-size: 1.4rem;
+              @include c.mq() {
+                font-size: 1.2rem;
+              }
+            }
+            img {
+              @include c.mq() {
+                width: 2.5rem;
+              }
             }
           }
         }
       }
       .sozai-box {
         width: 44rem;
+        @include c.mq() {
+          width: 100%;
+        }
         h4 {
           font-size: 2.7rem;
+          font-size: clamp(2rem, v.pxtovw(27), 2.7rem);
           font-weight: 500;
           text-align: center;
           margin-bottom: 2rem;
+          @include c.mq() {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+          }
         }
         .img-box {
           margin-bottom: 1rem;
         }
         p {
           line-height: 2;
+          @include c.mq() {
+            line-height: 1.7;
+          }
           small {
             display: block;
             font-size: 1.4rem;
@@ -313,25 +516,46 @@ top
     &.kenkou {
       position: relative;
       padding-bottom: 10.8rem;
+      @include c.mq() {
+        padding-bottom: 34.8rem;
+      }
       .flex {
         @include c.flex(start, center);
         gap: 8.8rem;
+        @include c.mq() {
+          flex-direction: column;
+          gap: 2rem;
+          margin-bottom: 3rem;
+        }
       }
       .ttl {
-        width: 29.6rem;
+        width: clamp(22rem, v.pxtovw(296), 29.6rem);
         margin-bottom: 2rem;
+        flex-shrink: 0;
+        @include c.mq() {
+          width: 15rem;
+          margin: 0 auto;
+        }
       }
       p {
         font-size: 1.8rem;
+        font-size: clamp(1.5rem, v.pxtovw(18), 1.8rem);
         font-weight: 500;
         line-height: 2;
+        flex-grow: 1;
+        @include c.mq() {
+          line-height: 1.7;
+        }
       }
       .diagram {
-        width: 67.1rem;
+        width: clamp(50rem, v.pxtovw(671), 67.1rem);
         margin: 0 auto;
+        @include c.mq() {
+          width: 100%;
+        }
       }
       .hukidashi {
-        width: 29.7rem;
+        width: clamp(22rem, v.pxtovw(297), 29.7rem);
         position: absolute;
         bottom: 2.8rem;
         right: 0;
@@ -360,6 +584,7 @@ top
       width: calc((100% / 2) - 1.5rem);
       border-radius: 2rem;
       padding: 4.7rem 6rem;
+      padding: clamp(2rem, v.pxtovw(47), 4.7rem) clamp(3rem, v.pxtovw(60), 6rem);
       &::before {
         position: absolute;
         top: 0;
@@ -426,6 +651,9 @@ top
   .faq-list {
     width: 74.7rem;
     margin: 0 auto;
+    @include c.mq() {
+      width: 100%;
+    }
     dl {
       margin-bottom: 1rem;
       dt {
@@ -468,6 +696,9 @@ top
   form {
     width: 60rem;
     margin: 0 auto;
+    @include c.mq() {
+      width: 100%;
+    }
     table {
       table-layout: fixed;
       width: 100%;
@@ -531,6 +762,9 @@ top
   &.cta01 {
     padding-bottom: 22.7rem;
     background: url(./images/bg-parts01.svg) no-repeat bottom/contain;
+    @include c.mq() {
+      padding-bottom: 12rem;
+    }
   }
   &.cta02 {
     padding-bottom: 6.5rem;
@@ -539,6 +773,9 @@ top
     position: relative;
     padding: 6rem 0;
     margin: 0 auto;
+    @include c.mq() {
+      padding: 3rem 2rem;
+    }
     &::before {
       position: absolute;
       top: 0;
@@ -554,12 +791,18 @@ top
   }
   h2 {
     font-weight: 700;
+    @include c.mq() {
+      font-size: 1.8rem;
+    }
   }
   p {
     line-height: 2;
   }
   .btn-area {
     width: 31.2rem;
+    @include c.mq() {
+      width: 25rem;
+    }
   }
   &:not(:has(.img-box)) {
     .contents {
@@ -579,7 +822,10 @@ top
     .contents {
       padding: 6rem 3.2rem 6rem 5.3rem;
       display: flex;
-      gap: 6rem;
+      gap: clamp(3rem, v.pxtovw(60), 6rem);
+      @include c.mq() {
+        flex-direction: column;
+      }
       .left {
         flex-grow: 1;
         h2,
@@ -587,13 +833,25 @@ top
         p {
           margin-bottom: 2.4rem;
         }
+        h2 {
+          @include c.mq(md) {
+            font-size: 2.1rem;
+          }
+        }
         h3 {
           font-weight: 500;
+          @include c.mq(md) {
+            font-size: 1.8rem;
+          }
         }
       }
       .img-box {
-        width: 53.2rem;
+        width: clamp(30rem, v.pxtovw(532), 53.2rem);
         flex-shrink: 0;
+        @include c.mq(md) {
+          width: 100%;
+          max-width: 30rem;
+        }
       }
     }
   }

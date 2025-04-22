@@ -18,6 +18,9 @@ component
     z-index: 1;
     overflow: hidden;
     transition: color 0.2s ease-in-out;
+    @include c.mq() {
+      font-size: 1.4rem;
+    }
     &::before {
       content: "";
       position: absolute;

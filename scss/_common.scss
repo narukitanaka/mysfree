@@ -212,12 +212,12 @@ input[type="button"] {
 }
 
 h2 {
-  font-size: 3.2rem;
+  font-size: clamp(2.4rem, v.pxtovw(32), 3.2rem);
   font-weight: 500;
   letter-spacing: 0.5px;
   color: v.$text-color;
-  @include mq() {
-    font-size: 2.2rem;
+  @include mq(md) {
+    font-size: 2.4rem;
   }
 }
 
@@ -226,7 +226,7 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.5px;
   color: v.$text-color;
-  @include mq() {
+  @include mq(md) {
     font-size: 1.8rem;
   }
 }
@@ -299,6 +299,9 @@ a {
       aspect-ratio: 1/0.04;
       background: url(images/ttl_under-bar.png) no-repeat center/contain;
       z-index: -1;
+      @include mq() {
+        width: 32rem;
+      }
     }
   }
 }
