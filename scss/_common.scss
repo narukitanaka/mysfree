@@ -170,7 +170,7 @@ body {
   font-family: "Zen Kaku Gothic New", YakuHanJP, "Hiragino Sans",
     "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
   min-height: 100dvh;
-  background: url(../images/main-bg.png) no-repeat center/cover;
+  background: url(../images/main-bg.png) repeat center/contain;
   background-color: v.$color-bg;
 }
 
@@ -282,5 +282,23 @@ a {
     display: inline-block;
     background-color: #fff;
     padding: 3px 5px 2px;
+  }
+  h2 {
+    line-height: 1.4;
+  }
+  &:not(:has(.sub-ttl)) {
+    position: relative;
+    text-align: center;
+    &::before {
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 72.5rem;
+      aspect-ratio: 1/0.04;
+      background: url(images/ttl_under-bar.png) no-repeat center/contain;
+      z-index: -1;
+    }
   }
 }

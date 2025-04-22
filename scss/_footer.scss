@@ -4,6 +4,9 @@
 footer
 *************************************************/
 footer {
+  background-color: #fcfaf4;
+  @include c.flex(between, center);
+  padding: 0 v.pxtovw(55) 4rem v.pxtovw(26);
   .logo {
     width: 7.9rem;
   }
