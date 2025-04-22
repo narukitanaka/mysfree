@@ -1,0 +1,134 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+top
+*************************************************/
+.kv {
+  position: relative;
+  width: 100vw;
+  height: v.pxtovw(770);
+  .kv_img {
+    position: absolute;
+    top: v.pxtovw(99);
+    right: v.pxtovw(82);
+    width: v.pxtovw(893);
+  }
+  .kv_ttl {
+    display: inline-block;
+    position: relative;
+    margin: v.pxtovw(298) 0 0 v.pxtovw(119);
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 2.1rem;
+      span {
+        display: block;
+        font-family: v.$font-syn;
+        font-size: 4.8rem;
+        font-weight: 700;
+      }
+    }
+    .sub-ttl {
+      text-align: right;
+      span {
+        display: inline-block;
+        background-color: #fff;
+        margin-bottom: 5px;
+        padding: 1px 1px 2px 5px;
+        font-family: v.$font-syn;
+        font-size: 1.8rem;
+      }
+    }
+    .img-box {
+      position: absolute;
+      top: -1rem;
+      left: v.pxtovw(-112);
+      width: v.pxtovw(339);
+      z-index: -1;
+    }
+  }
+  .omotenashi {
+    position: absolute;
+    top: v.pxtovw(629);
+    right: v.pxtovw(40);
+    background-color: #fff;
+    @include c.flex(center, start);
+    gap: 2rem;
+    padding: 3rem 4rem;
+    border-radius: 2rem;
+    img {
+      width: 20rem;
+      margin-top: 1rem;
+    }
+    p {
+      font-size: 1.4rem;
+      strong {
+        font-size: 1.6rem;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+#concept {
+  .inner {
+    position: relative;
+    padding-top: 14rem;
+    @include c.flex(start, start);
+    gap: 4rem;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -24.5rem;
+      content: "";
+      width: 155rem;
+      aspect-ratio: 1/0.54;
+      background: url(../images/concept_bg.svg) no-repeat center/contain;
+      z-index: -1;
+    }
+  }
+  .left {
+    .img-box {
+      width: 40.6rem;
+      margin-left: -2rem;
+    }
+  }
+  .ttl-wrap {
+    .sub-ttl {
+      margin-bottom: 1rem;
+    }
+    h2 {
+      line-height: 1.4;
+    }
+  }
+  .text {
+    padding-top: 4rem;
+    p {
+      margin-bottom: 3rem;
+    }
+  }
+  .point {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5rem;
+    div {
+      @include c.flex(start, center);
+      width: 48rem;
+      aspect-ratio: 1/0.15;
+      display: flex;
+      gap: 9px;
+      background: url(../images/concept_point-bg.png) no-repeat center/contain;
+      padding-left: 2rem;
+      p {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.3;
+        margin-top: -1rem;
+        span {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}

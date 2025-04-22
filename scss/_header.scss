@@ -1,0 +1,22 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+header
+*************************************************/
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-top: 3.7rem;
+  padding: 3.7rem v.pxtovw(54) 0 v.pxtovw(40);
+  z-index: 999;
+  .header-inner {
+    @include c.flex(between, center);
+    .logo {
+      width: 7.9rem;
+    }
+    .btn {
+      width: 31.2rem;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+component
+*************************************************/
+// トンマナ
+.btn {
+  @include c.flex(center, center);
+  aspect-ratio: 1/0.2;
+  border-radius: 100vmax;
+  color: #fff;
+  font-weight: 700;
+  &.c-red {
+    background-color: v.$color-red;
+    font-size: 2rem;
+  }
+  &.c-black {
+    background-color: #0f0f0f;
+    font-size: 1.8rem;
+  }
+}
