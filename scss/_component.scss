@@ -12,7 +12,31 @@ component
   font-weight: 700;
   &.c-red {
     background-color: v.$color-red;
+    border: 1px solid v.$color-red;
     font-size: 2rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.2s ease-in-out;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      border-radius: 100vmax;
+      border: 1px solid v.$color-red;
+      background-color: #fff;
+      transition: width 0.2s ease-in-out;
+      z-index: -1;
+    }
+    &:hover {
+      color: v.$color-red;
+      &::before {
+        width: 100%;
+      }
+    }
   }
   &.c-black {
     background-color: #0f0f0f;

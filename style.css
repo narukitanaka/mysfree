@@ -935,7 +935,31 @@ component
 }
 .btn.c-red {
   background-color: #ea4508;
+  border: 1px solid #ea4508;
   font-size: 2rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.2s ease-in-out;
+}
+.btn.c-red::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 100vmax;
+  border: 1px solid #ea4508;
+  background-color: #fff;
+  transition: width 0.2s ease-in-out;
+  z-index: -1;
+}
+.btn.c-red:hover {
+  color: #ea4508;
+}
+.btn.c-red:hover::before {
+  width: 100%;
 }
 .btn.c-black {
   background-color: #0f0f0f;
@@ -1152,6 +1176,15 @@ top
   border-left: 7px solid transparent;
   border-top: 13px solid #d60c1e;
   border-bottom: 0;
+}
+#omotenashi .left .omotenashi-banner a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+}
+#omotenashi .left .omotenashi-banner a:hover {
+  scale: 0.95;
 }
 #omotenashi .right {
   padding-top: 6.7rem;
@@ -1394,7 +1427,7 @@ top
 }
 
 #faq {
-  padding-bottom: 2rem;
+  padding-bottom: 8rem;
 }
 #faq .ttl-wrap {
   text-align: center;
@@ -1499,6 +1532,10 @@ top
 #form form .btn-wrap .btn {
   position: relative;
   width: 100%;
+  transition: all 0.3s;
+}
+#form form .btn-wrap .btn:hover {
+  scale: 0.95;
 }
 #form form .btn-wrap .btn img {
   position: absolute;
