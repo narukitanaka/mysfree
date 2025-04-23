@@ -10,20 +10,26 @@ header {
   padding-top: 3.7rem;
   padding: 3.7rem v.pxtovw(54) 0 v.pxtovw(40);
   z-index: 999;
+  @include c.mq(md) {
+    padding-top: 2rem;
+  }
   @include c.mq() {
-    padding: 1rem v.pxtovw_sp(10) 0;
+    padding: v.pxtovw_sp(10) v.pxtovw_sp(10) 0;
   }
   .header-inner {
     @include c.flex(between, center);
     .logo {
       width: 7.9rem;
       @include c.mq() {
-        width: 5rem;
+        width: clamp(5rem, v.pxtovw_sp(50), 12rem);
       }
     }
     .btn {
       width: 31.2rem;
       @include c.mq() {
+        width: clamp(25rem, v.pxtovw_sm(250), 30rem);
+      }
+      @include c.mq(ss) {
         width: 21rem;
       }
     }

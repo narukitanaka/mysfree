@@ -69,7 +69,7 @@ $userMail = 1;
 $BccMail = "";
 
 // 管理者宛に送信されるメールのタイトル（件名）
-$subject = "Mys Free COCONUT ICE｜お問い合わせがあります";
+$subject = "お問い合わせがあります｜MysFree COCONUT ICE";
 
 // 送信確認画面の表示(する=1, しない=0)
 $confirmDsp = 0;
@@ -103,7 +103,7 @@ $remail = 1;
 $refrom_name = "MysFree COCONUT ICE";
 
 // 差出人に送信確認メールを送る場合のメールのタイトル（上記で1を設定した場合のみ）
-$re_subject = "MysFree COCONUT ICE｜お問い合わせありがとうございます";
+$re_subject = "お問い合わせありがとうございます｜MysFree COCONUT ICE";
 
 //フォーム側の「名前」箇所のname属性の値　※自動返信メールの「○○様」の表示で使用します。
 //指定しない、または存在しない場合は、○○様と表示されないだけです。あえて無効にしてもOK
@@ -160,7 +160,7 @@ $hankaku_array = array('電話番号');
 //  添付ファイル処理用設定(BEGIN)
 //----------------------------------------------------------------------
 //ファイル添付機能を使用する場合は一時ファイルを保存する必要があるため確認画面の表示が必須になります。
-$confirmDsp = 1;//確認画面を表示 ※変更不可
+$confirmDsp = 0;//確認画面を表示 ※変更不可
 
 /* ----- 重要 ------*/
 //ファイルアップ部分のnameの値は必ず配列の形　例　upfile[]　としてください。※添付ファイルが1つでも
@@ -362,7 +362,7 @@ if(($confirmDsp == 0 || $sendmail == 1) && $empty_flag != 1){
       }
 
       // reCAPTCHA結果とスコアをサンクスページに渡す
-      header("Location: https://gh-check.com/v3_confirm/thanks.html?success=1&score=" . $responseKeys["score"]);
+      header("Location: https://gh-check.com/mysfree-lp/thanks.html?success=1&score=" . $responseKeys["score"]);
       exit;
   } else {
       // reCAPTCHAが失敗した場合、エラーメッセージを表示し、送信を中断
@@ -805,7 +805,7 @@ function mailToAdmin($arr,$subject,$mailFooterDsp,$mailSignature,$encode,$confir
 	//  添付ファイル処理(END)
 	//----------------------------------------------------------------------
 	
-	$adminBody .="「".$subject."」からメールが届きました\n\n";
+	$adminBody .="MysFree COCONUT ICE_サイトからお問い合わせが届きました\n\n";
 	$adminBody .="＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝\n\n";
 	$adminBody .= postToMail($arr);//POSTデータを関数からセット
 	$adminBody .="\n＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝\n";

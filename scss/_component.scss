@@ -44,5 +44,8 @@ component
   &.c-black {
     background-color: #0f0f0f;
     font-size: 1.8rem;
+    @include c.mq() {
+      font-size: 1.6rem;
+    }
   }
 }

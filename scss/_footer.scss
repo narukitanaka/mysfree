@@ -7,8 +7,14 @@ footer {
   background-color: #fcfaf4;
   @include c.flex(between, center);
   padding: 0 v.pxtovw(55) 4rem v.pxtovw(26);
+  @include c.mq() {
+    padding: 0 1.5rem 3rem;
+  }
   .logo {
     width: 7.9rem;
+    @include c.mq() {
+      width: 6rem;
+    }
   }
   &.p-thanks {
     padding: 22rem v.pxtovw(55) 4rem v.pxtovw(26);

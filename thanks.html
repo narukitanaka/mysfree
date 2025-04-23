@@ -42,17 +42,19 @@
     <section id="thanks">
       <div class="inner">
         <div class="ttl-wrap">
-          <h2>お問い合わせありがとうございます</h2>
+          <h2>お問い合わせ<br class="u-sp">ありがとうございます</h2>
         </div>
-        <p>
-          この度はお問い合わせいただき誠にありがとうございます。<br>
-          お送り頂きました内容を確認の上、2-3日営業日以内に折り返しご連絡させて頂きます。<br>
-          また、ご入力頂いたメールアドレスへ、自動返信の確認メールをお送りしております。
-        </p>
-        <p>
-          しばらく経ってもメールが届かない場合は、入力頂いたメールアドレスが間違っているか、 <br class="u-pc">迷惑メールフォルダに振り分けられている可能性がございます。<br>
-          以上の内容をご確認の上、お手数ですがもう一度フォームよりお問い合わせいただきますようお願い申し上げます。
-        </p>
+        <div class="contents">
+          <p>
+            この度はお問い合わせいただき誠にありがとうございます。<br>
+            お送り頂きました内容を確認の上、2-3日営業日以内に折り返しご連絡させて頂きます。<br>
+            また、ご入力頂いたメールアドレスへ、自動返信の確認メールをお送りしております。
+          </p>
+          <p>
+            しばらく経ってもメールが届かない場合は、入力頂いたメールアドレスが間違っているか、 <br class="u-pc">迷惑メールフォルダに振り分けられている可能性がございます。<br>
+            以上の内容をご確認の上、お手数ですがもう一度フォームよりお問い合わせいただきますようお願い申し上げます。
+          </p>
+        </div>
         <div class="btn-wrap"><a class="btn c-red" href="./">ホームへ戻る</a></div>
       </div>
     </section>
@@ -69,6 +71,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    // URLのクエリパラメータを取得する関数
+    function getQueryParams() {
+      const params = {};
+      window.location.search.substring(1).split("&").forEach(function (pair) {
+        const [key, value] = pair.split("=");
+        params[decodeURIComponent(key)] = decodeURIComponent(value);
+      });
+      return params;
+    }
+
+    // クエリパラメータを取得
+    const queryParams = getQueryParams();
+
+    // reCAPTCHAの結果をコンソールに表示
+    if (queryParams.success === "1" && queryParams.score) {
+      console.log("reCAPTCHA認証成功:", true);
+      console.log("reCAPTCHAスコア:", queryParams.score);
+    } else {
+      console.log("reCAPTCHA認証失敗");
+    }
+  </script>
 
 </body>
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <!-- favicon -->
-  <link rel="icon" type="image/png" href="images/fav.png" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
   <!-- <meta name="robots" content="index, follow"> -->
   <meta name="format-detection" content="telephone=no">
   <!-- css -->
@@ -25,8 +25,35 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <title>地球とカラダにやさしいCOCONUT ICE CREAM｜Mys Free</title>
-  <meta name="description" content="" />
+  <meta name="description" content="ミースフリーのココナッツアイスは、「環境にやさしく、カラダにもうれしいアイスクリームを」──そんな想いから生まれました。" />
   <meta name="keywords" content="" />
+
+  <!-- OGP -->
+  <meta property="og:title" content="地球とカラダにやさしい COCONUT ICE｜Mys Free">
+  <meta property="og:description" content="ミースフリーのココナッツアイスは、「環境にやさしく、カラダにもうれしいアイスクリームを」──そんな想いから生まれました。">
+  <meta property="og:image" content="https://mysfree.com/images/ogp-image.jpg">
+  <meta property="og:url" content="https://mysfree.com/lp-coconut">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MysFree">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="地球とカラダにやさしいCOCONUT ICE CREAM｜Mys Free">
+  <meta name="twitter:description" content="ミースフリーのココナッツアイスは、「環境にやさしく、カラダにもうれしいアイスクリームを」──そんな想いから生まれました。">
+  <meta name="twitter:image" content="https://mysfree.com/images/ogp-image.jpg">
+
+  <!-- 構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "地球とカラダにやさしい COCONUT ICE｜Mys Free",
+    "description": "ミースフリーのココナッツアイスは、「環境にやさしく、カラダにもうれしいアイスクリームを」──そんな想いから生まれました。",
+    "url": "https://mysfree.com/lp-coconut", 
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mys Free Co.,Ltd.",
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -424,7 +451,7 @@
             <h3>ココナッツアイス　ストロベリー</h3>
             <div class="img-box"><img src="images/lineup_img06.png" alt=""></div>
             <p class="txt">
-              冷凍イチゴとこだわりのストロベリーピューレを使用<br>
+              冷凍イチゴとこだわりのストロベリーピューレを使用。<br>
               果肉の食感も楽しめる甘酸っぱい苺のアイス
             </p>
             <div class="nutrients">
@@ -477,25 +504,25 @@
         </div>
         <div class="faq-list">
           <dl class="qa">
-            <dt><span>Q</span>どこのココナッツミルクを使用していますか？</dt>
+            <dt><span>Q.</span>どこのココナッツミルクを使用していますか？</dt>
             <dd>
               USDAオーガニック認証取得済みのベトナム産ココナッツミルクを使用しています。
             </dd>
           </dl>
           <dl class="qa">
-            <dt><span>Q</span>添加物は使用していますか？</dt>
+            <dt><span>Q.</span>添加物は使用していますか？</dt>
             <dd>
               安定剤として100%天然成分でできたグァーガムを使用しています。グァーガムは、FDA（アメリカ食品医薬局）も安全性を認めている植物由来の水に溶ける食物繊維です。
             </dd>
           </dl>
           <dl class="qa">
-            <dt><span>Q</span>1回の注文で何個から購入可能ですか？</dt>
+            <dt><span>Q.</span>1回の注文で何個から購入可能ですか？</dt>
             <dd>
               カップインタイプは24個（混載対応可能）、２L業務用は2本から販売可能です。
             </dd>
           </dl>
           <dl class="qa">
-            <dt><span>Q</span>サンプルの提供は可能ですか？</dt>
+            <dt><span>Q.</span>サンプルの提供は可能ですか？</dt>
             <dd>
               カップインタイプのみサンプル提供可能です。
             </dd>
@@ -512,7 +539,7 @@
           <div class="sub-ttl">CONTACT</div>
           <h2>お問い合わせ</h2>
         </div>
-        <p class="txt">商品に関するご質問やお取り扱いのご相談などお気軽にお問い合わせください。</p>
+        <p class="txt">商品に関するご質問やお取り扱いのご相談など<br class="u-sp">お気軽にお問い合わせください。</p>
         <form action="mail.php" method="post">
           <table>
             <tr>
@@ -536,7 +563,8 @@
               <td><input type="tel" id="phone" name="電話番号" placeholder="000-0000-0000" required></td>
             </tr>
             <tr>
-              <th><label for="message">お問い合わせ内容（資料をご希望の場合、「資料請求」とご記載ください。）<span class="required">必須</span></label></th>
+              <th><label for="message">お問い合わせ内容<span class="required u-sp">必須</span><br class="u-sp"><span
+                    class="small">（資料をご希望の場合、「資料請求」とご記載ください。）</span><span class="required u-pc">必須</span></label></th>
               <td><textarea id="message" name="お問い合わせ内容" rows="5" placeholder="資料請求したい。" required></textarea></td>
             </tr>
           </table>
